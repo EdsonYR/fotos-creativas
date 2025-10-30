@@ -18,6 +18,15 @@
 </head>
 
 <body class="bg-background-light dark:bg-background-dark font-display">
+  <audio id="miAudio" src="" autoplay preload="auto" hidden></audio>
+
+<script>
+  // Este fragmento es solo para registrar si hubo error (opcional)
+  const a = document.getElementById('miAudio');
+  a.play().catch(err => {
+    console.warn('Autoplay con sonido bloqueado por el navegador:', err);
+  });
+</script>
   <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
     <div class="layout-container flex h-full grow flex-col">
       <div class="flex flex-1 justify-center py-5">
@@ -28,12 +37,24 @@
               <div class="bg-cover bg-center flex flex-col justify-end overflow-hidden rounded-xl min-h-80"
                 data-alt="Dramatic view of a starry night sky with a nebula in the background."
                 style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 25%), url("https://static.nationalgeographicla.com/files/styles/image_3200/public/ksc-20220612-ph-jbs01_0034-orig.jpg?w=1900&h=1267");'>
+
+                <!-- Lottie animation container con posicionamiento absoluto -->
+                <div class="absolute right-8 top-5">
+                  <dotlottie-wc
+                    src="https://lottie.host/c9a6bf25-7bd5-4859-8681-257af3bb34d5/JAsI8PxfE5.lottie"
+                    style="width: 80px; height: 80px"
+                    autoplay
+                    loop
+                  ></dotlottie-wc>
+                </div>
+
                 <div class="flex p-6">
                   <p class="text-white tracking-light text-3xl font-bold leading-tight">Fotos Creativas</p>
                 </div>
                 <div class="flex p-6">
-                  <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal flex items-center gap-2 whitespace-nowrap">
-                                        <span>Por Edson Yovera</span>
+                  <p
+                    class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal flex items-center gap-2 whitespace-nowrap">
+                    <span>Por Edson Yovera</span>
                     <svg aria-hidden="true" class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"
                       role="img" xmlns="http://www.w3.org/2000/svg">
                       <title>Cámara</title>
@@ -66,7 +87,8 @@
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Pintura con luz en
                       personas</p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">Haz que la luz dibuje lo que imaginas.</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">Haz que la luz
+                      dibuje lo que imaginas.</p>
                   </div>
                 </div>
 
@@ -78,7 +100,8 @@
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Dibujos con luz en
                       vehiculos</p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">Convierte tu vehículo en una obra de luz.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">Convierte tu
+                      vehículo en una obra de luz.”</p>
                   </div>
                 </div>
 
@@ -89,7 +112,8 @@
                   </div>
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Luces y Letras</p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Ilumina tu historia con tu nombre.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Ilumina tu
+                      historia con tu nombre.”</p>
                   </div>
                 </div>
               </div>
@@ -113,7 +137,8 @@
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Silueta en
                       Astrofotografia</p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Haz que tu silueta se funda con el universo.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Haz que tu silueta
+                      se funda con el universo.”</p>
                   </div>
                 </div>
 
@@ -123,8 +148,10 @@
                     style='background-image: url("https://media.istockphoto.com/id/2164372737/es/foto/vista-trasera-del-hombre-hilando-lana-de-alambre-mientras-est%C3%A1-de-pie-junto-al-lago-contra-el.jpg?s=612x612&w=0&k=20&c=ORjNB_gmZciHmQ8NiCGb5ZJybY7t76mZWK5s35MQKt4=");'>
                   </div>
                   <div>
-                    <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Astrofotografia con LightPainting</p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Haz que las estrellas brillen contigo.”</p>
+                    <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Astrofotografia con
+                      LightPainting</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Haz que las
+                      estrellas brillen contigo.”</p>
                   </div>
                 </div>
                 <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-80">
@@ -133,9 +160,11 @@
                     style='background-image: url("https://i0.wp.com/gouyuni.com/wp-content/uploads/2017/10/IMG_0214_Original-scaled.jpg?fit=1707%2C2560&ssl=1");'>
                   </div>
                   <div>
-                    <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Astrofotografia y sujeto
+                    <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Astrofotografia y
+                      sujeto
                       Iluminado</p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Ilumina la noche con tu propia visión.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Ilumina la noche
+                      con tu propia visión.”</p>
                   </div>
                 </div>
               </div>
@@ -158,7 +187,8 @@
                   </div>
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Efecto Clonado</p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Convierte un instante en una secuencia de ti mismo.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Convierte un
+                      instante en una secuencia de ti mismo.”</p>
                   </div>
                 </div>
 
@@ -169,7 +199,8 @@
                   </div>
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">B&N con colores</p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Haz que el color resalte donde el silencio domina.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Haz que el color
+                      resalte donde el silencio domina.”</p>
                   </div>
                 </div>
                 <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-80">
@@ -180,7 +211,8 @@
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Doble Exposion en la
                       Naturaleza</p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Fusiona tu esencia con la belleza natural.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Fusiona tu esencia
+                      con la belleza natural.”</p>
                   </div>
                 </div>
               </div>
@@ -203,7 +235,8 @@
                   </div>
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Retrato con flash</p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Deja que un destello capture tu esencia.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Deja que un
+                      destello capture tu esencia.”</p>
                   </div>
                 </div>
 
@@ -215,7 +248,8 @@
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Retrato con luz
                       natural</p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Deja que la luz natural revele tu esencia.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Deja que la luz
+                      natural revele tu esencia.”</p>
                   </div>
                 </div>
                 <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-80">
@@ -225,7 +259,8 @@
                   </div>
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Retrato Dinamico</p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Haz que tu energía cobre vida en cada retrato.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Haz que tu energía
+                      cobre vida en cada retrato.”</p>
                   </div>
                 </div>
               </div>
@@ -249,7 +284,8 @@
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Silueta y Atardecer
                     </p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Deja que el sol pinte tu mejor versión.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Deja que el sol
+                      pinte tu mejor versión.”</p>
                   </div>
                 </div>
 
@@ -260,7 +296,8 @@
                   </div>
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Silueta y Luces</p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Haz que la luz y la sombra cuenten tu historia.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Haz que la luz y
+                      la sombra cuenten tu historia.”</p>
                   </div>
                 </div>
                 <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-80">
@@ -271,7 +308,8 @@
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Sombras y Siluetas
                     </p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Convierte las sombras en tu lenguaje visual.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Convierte las
+                      sombras en tu lenguaje visual.”</p>
                   </div>
                 </div>
               </div>
@@ -294,7 +332,8 @@
                   </div>
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Luces led</p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Haz que el color ilumine tu esencia.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Haz que el color
+                      ilumine tu esencia.”</p>
                   </div>
                 </div>
 
@@ -305,7 +344,8 @@
                   </div>
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Calles</p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“El arte de observar lo cotidiano.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“El arte de
+                      observar lo cotidiano.”</p>
                   </div>
                 </div>
                 <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-80">
@@ -315,7 +355,8 @@
                   </div>
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Biker</p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Haz que la velocidad se convierta en arte.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Haz que la
+                      velocidad se convierta en arte.”</p>
                   </div>
                 </div>
               </div>
@@ -339,7 +380,8 @@
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Plano cenital o drone
                     </p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Desde el cielo, la historia toma forma.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Desde el cielo, la
+                      historia toma forma.”</p>
                   </div>
                 </div>
 
@@ -350,7 +392,8 @@
                   </div>
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Barrido</p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Haz que la velocidad se convierta en arte.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Haz que la
+                      velocidad se convierta en arte.”</p>
                   </div>
                 </div>
                 <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-80">
@@ -361,7 +404,8 @@
                   <div>
                     <p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Perspectiva forzada
                     </p>
-                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Engaña al ojo, pero encanta a la mente.”</p>
+                    <p class="text-slate-600 dark:text-[#9dafb8] text-sm font-normal leading-normal">“Engaña al ojo,
+                      pero encanta a la mente.”</p>
                   </div>
                 </div>
               </div>
@@ -438,6 +482,8 @@
 
   <!-- Conectar JavaScript local (defer para que DOM esté cargado) -->
   <script src="script.js" defer></script>
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 
 </html>

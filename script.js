@@ -102,3 +102,35 @@ if (typeof tailwind !== "undefined" || typeof window !== "undefined") {
   modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal(); });
 })();
+
+// Efecto flash blanco
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    // Crear el elemento para el flash
+    const flash = document.createElement('div');
+    flash.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      opacity: 0;
+      z-index: 9999;
+      pointer-events: none;
+      transition: opacity 0.5s ease-in-out;
+    `;
+    document.body.appendChild(flash);
+
+    // Mostrar el flash
+    requestAnimationFrame(() => {
+      flash.style.opacity = '1';
+      
+      // Ocultar y remover el flash
+      setTimeout(() => {
+        flash.style.opacity = '0';
+        setTimeout(() => flash.remove(), 500);
+      }, 200); // Duración del flash
+    });
+  }, 3400); // Retraso de 5 segundos
+});
