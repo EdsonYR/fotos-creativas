@@ -18,15 +18,6 @@
 </head>
 
 <body class="bg-background-light dark:bg-background-dark font-display">
-  <audio id="miAudio" src="" autoplay preload="auto" hidden></audio>
-
-<script>
-  // Este fragmento es solo para registrar si hubo error (opcional)
-  const a = document.getElementById('miAudio');
-  a.play().catch(err => {
-    console.warn('Autoplay con sonido bloqueado por el navegador:', err);
-  });
-</script>
   <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
     <div class="layout-container flex h-full grow flex-col">
       <div class="flex flex-1 justify-center py-5">
