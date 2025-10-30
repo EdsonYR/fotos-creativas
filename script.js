@@ -132,5 +132,5 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => flash.remove(), 500);
       }, 200); // Duración del flash
     });
-  }, 3300); // Retraso de 5 segundos
+  }, 3200); // Retraso de 5 segundos
 });
